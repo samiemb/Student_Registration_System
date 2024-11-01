@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>payment</title>
+</head>
+<body>
+<h1>Process Payment for {{ payment.course.name }}</h1>
+<p>Amount to pay: {{ payment.amount }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Pay Now</button>
+</form>
+</body>
+</html>

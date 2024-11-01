@@ -1,0 +1,17 @@
+<!-- reporting_analytics/templates/reporting_analytics/course_enrollment_report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment Report</title>
+</head>
+<body>
+    <h1>Course Enrollment Report</h1>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.title }} - {{ course.enrolled_students.count }} students enrolled</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

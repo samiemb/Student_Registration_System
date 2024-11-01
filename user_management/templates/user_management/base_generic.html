@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Student Registration System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'user_management/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Student Registration System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'root_redirect' %}">Home</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'user_list' %}">User List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mekelle University</p>
+    </footer>
+</body>
+</html>

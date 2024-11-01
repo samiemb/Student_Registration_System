@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Optional: Include CSS for styling -->
+</head>
+<body>
+    <header>
+        <h1>Reports</h1>
+        <nav>
+            <ul>
+                <a href="{% url 'payment_history' %}">View Payment History</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Payment Summary</h2>
+            <p>This section can provide a summary of payments made.</p>
+            <!-- You can iterate through payments and display them here -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>User</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for payment in payments %}
+                    <tr>
+                        <td>{{ payment.id }}</td>
+                        <td>{{ payment.user.username }}</td>
+                        <td>${{ payment.amount }}</td>
+                        <td>{{ payment.date }}</td>
+                        <td>{{ payment.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Registration Summary</h2>
+            <p>This section can provide details of registrations.</p>
+            <!-- Similarly, you can iterate through registrations and display them -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Mekelle University</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Summary</title>
+</head>
+<body>
+    <h1>Payment Summary</h1>
+    <h2>Total Payments: ${{ total_payments }}</h2>
+    <ul>
+        {% for payment in payments %}
+            <li>{{ payment.user }} - ${{ payment.amount }} on {{ payment.timestamp }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
